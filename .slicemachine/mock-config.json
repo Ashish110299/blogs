@@ -6,5 +6,12 @@
     "Footer": {},
     "Page": {},
     "Blog": {}
+  },
+  "slices": {
+    "FooterWidget": {
+      "default": {
+        "primary": {}
+      }
+    }
   }
 }

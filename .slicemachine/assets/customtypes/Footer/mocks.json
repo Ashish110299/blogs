@@ -1,1 +1,53 @@
-{}
+{
+  "slices": {
+    "__TYPE__": "SliceContentType",
+    "value": [
+      {
+        "key": "footer_widget$8d936fbb-1eb6-4ee9-89d3-8fbd6fe5aaca",
+        "name": "footer_widget",
+        "widget": {
+          "__TYPE__": "SharedSliceContent",
+          "variation": "default",
+          "primary": {
+            "WidgetTitle": {
+              "__TYPE__": "StructuredTextContent",
+              "value": [
+                {
+                  "type": "paragraph",
+                  "content": {
+                    "text": "Duis irure nulla esse in amet velit dolor tempor officia. Ullamco cillum duis cupidatat adipisicing."
+                  }
+                }
+              ]
+            }
+          },
+          "items": [
+            {
+              "__TYPE__": "GroupItemContent",
+              "value": [
+                [
+                  "MenuText",
+                  {
+                    "__TYPE__": "FieldContent",
+                    "value": "driving",
+                    "type": "Text"
+                  }
+                ],
+                [
+                  "MenuLink",
+                  {
+                    "__TYPE__": "LinkContent",
+                    "value": {
+                      "__TYPE__": "ExternalLink",
+                      "url": "https://slicemachine.dev"
+                    }
+                  }
+                ]
+              ]
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

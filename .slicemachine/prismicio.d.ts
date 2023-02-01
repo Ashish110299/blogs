@@ -19,7 +19,24 @@ type BlogDocumentData = Record<string, never>;
  */
 export type BlogDocument<Lang extends string = string> = prismicT.PrismicDocumentWithUID<Simplify<BlogDocumentData>, "Blog", Lang>;
 /** Content for Footer documents */
-type FooterDocumentData = Record<string, never>;
+interface FooterDocumentData {
+    /**
+     * Slice Zone field in *Footer*
+     *
+     * - **Field Type**: Slice Zone
+     * - **Placeholder**: *None*
+     * - **API ID Path**: Footer.slices[]
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/slices
+     *
+     */
+    slices: prismicT.SliceZone<FooterDocumentDataSlicesSlice>;
+}
+/**
+ * Slice for *Footer → Slice Zone*
+ *
+ */
+type FooterDocumentDataSlicesSlice = FooterWidgetSlice;
 /**
  * Footer document from Prismic
  *
@@ -137,11 +154,76 @@ type PageDocumentData = Record<string, never>;
  */
 export type PageDocument<Lang extends string = string> = prismicT.PrismicDocumentWithUID<Simplify<PageDocumentData>, "Page", Lang>;
 export type AllDocumentTypes = BlogDocument | FooterDocument | HeaderDocument | PageDocument;
+/**
+ * Primary content in FooterWidget → Primary
+ *
+ */
+interface FooterWidgetSliceDefaultPrimary {
+    /**
+     * Widget Title field in *FooterWidget → Primary*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: footer_widget.primary.WidgetTitle
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    WidgetTitle: prismicT.RichTextField;
+}
+/**
+ * Item in FooterWidget → Items
+ *
+ */
+export interface FooterWidgetSliceDefaultItem {
+    /**
+     * Menu Text field in *FooterWidget → Items*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: footer_widget.items[].MenuText
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    MenuText: prismicT.KeyTextField;
+    /**
+     * Menu Link field in *FooterWidget → Items*
+     *
+     * - **Field Type**: Link
+     * - **Placeholder**: *None*
+     * - **API ID Path**: footer_widget.items[].MenuLink
+     * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+     *
+     */
+    MenuLink: prismicT.LinkField;
+}
+/**
+ * Default variation for FooterWidget Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `FooterWidget`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type FooterWidgetSliceDefault = prismicT.SharedSliceVariation<"default", Simplify<FooterWidgetSliceDefaultPrimary>, Simplify<FooterWidgetSliceDefaultItem>>;
+/**
+ * Slice variation for *FooterWidget*
+ *
+ */
+type FooterWidgetSliceVariation = FooterWidgetSliceDefault;
+/**
+ * FooterWidget Shared Slice
+ *
+ * - **API ID**: `footer_widget`
+ * - **Description**: `FooterWidget`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type FooterWidgetSlice = prismicT.SharedSlice<"footer_widget", FooterWidgetSliceVariation>;
 declare module "@prismicio/client" {
     interface CreateClient {
         (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
     }
     namespace Content {
-        export type { BlogDocumentData, BlogDocument, FooterDocumentData, FooterDocument, HeaderDocumentData, HeaderDocumentDataNavigationItem, HeaderDocument, PageDocumentData, PageDocument, AllDocumentTypes };
+        export type { BlogDocumentData, BlogDocument, FooterDocumentData, FooterDocumentDataSlicesSlice, FooterDocument, HeaderDocumentData, HeaderDocumentDataNavigationItem, HeaderDocument, PageDocumentData, PageDocument, AllDocumentTypes, FooterWidgetSliceDefaultPrimary, FooterWidgetSliceDefaultItem, FooterWidgetSliceDefault, FooterWidgetSliceVariation, FooterWidgetSlice };
     }
 }
