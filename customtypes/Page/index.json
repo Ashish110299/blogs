@@ -11,6 +11,67 @@
           "label": "UID",
           "placeholder": ""
         }
+      },
+      "slices": {
+        "type": "Slices",
+        "fieldset": "Slice Zone",
+        "config": {
+          "choices": {
+            "subscribe_banner": {
+              "type": "SharedSlice"
+            }
+          }
+        }
+      }
+    },
+    "SEO": {
+      "title": {
+        "type": "Text",
+        "config": {
+          "label": "Meta Title",
+          "placeholder": ""
+        }
+      },
+      "description": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Meta Description",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+        }
+      },
+      "MetaImage": {
+        "type": "Image",
+        "config": {
+          "label": "Meta Image",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "CanonicalLink": {
+        "type": "Link",
+        "config": {
+          "label": "Canonical Link",
+          "placeholder": "",
+          "allowTargetBlank": false,
+          "select": null
+        }
+      },
+      "RobotsMetatag": {
+        "type": "Select",
+        "config": {
+          "label": "Robots Metatag",
+          "placeholder": "",
+          "options": [
+            "all",
+            "noindex",
+            "nofollow",
+            "noindex,nofollow",
+            "any",
+            "index"
+          ]
+        }
       }
     }
   }

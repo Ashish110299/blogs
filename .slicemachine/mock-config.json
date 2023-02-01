@@ -5,6 +5,20 @@
     },
     "Footer": {},
     "Page": {},
-    "Blog": {}
+    "Blog": {},
+    "SearchArchive": {}
+  },
+  "slices": {
+    "FooterWidget": {
+      "default": {
+        "primary": {}
+      }
+    },
+    "ContactUs": {
+      "default": {
+        "primary": {}
+      }
+    },
+    "SubscribeBanner": {}
   }
 }

@@ -1,0 +1,9 @@
+{
+  "id": "SearchArchive",
+  "label": "Search Archive",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {}
+  }
+}
