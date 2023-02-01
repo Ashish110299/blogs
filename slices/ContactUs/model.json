@@ -1,0 +1,69 @@
+{
+  "id": "contact_us",
+  "type": "SharedSlice",
+  "name": "ContactUs",
+  "description": "ContactUs",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "sktwi1xtmkfgx8626",
+      "description": "ContactUs",
+      "primary": {
+        "ButtonText": {
+          "type": "Text",
+          "config": {
+            "label": "Button Text",
+            "placeholder": ""
+          }
+        },
+        "ButtonLink": {
+          "type": "Link",
+          "config": {
+            "label": "Button Link",
+            "placeholder": "",
+            "select": null
+          }
+        },
+        "ButtonType": {
+          "type": "Select",
+          "config": {
+            "label": "Button Type",
+            "placeholder": "",
+            "options": [
+              "primary",
+              "secondary"
+            ]
+          }
+        }
+      },
+      "items": {
+        "SocialMediaName": {
+          "type": "Text",
+          "config": {
+            "label": "Social Media Name",
+            "placeholder": ""
+          }
+        },
+        "SocialMediaLink": {
+          "type": "Link",
+          "config": {
+            "label": "Social Media Link",
+            "placeholder": "",
+            "select": null
+          }
+        },
+        "SocialMediaIcon": {
+          "type": "Image",
+          "config": {
+            "label": "Social Media Icon",
+            "constraint": {},
+            "thumbnails": []
+          }
+        }
+      },
+      "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+    }
+  ]
+}

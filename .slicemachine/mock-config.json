@@ -12,6 +12,11 @@
       "default": {
         "primary": {}
       }
+    },
+    "ContactUs": {
+      "default": {
+        "primary": {}
+      }
     }
   }
 }

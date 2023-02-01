@@ -155,6 +155,101 @@ type PageDocumentData = Record<string, never>;
 export type PageDocument<Lang extends string = string> = prismicT.PrismicDocumentWithUID<Simplify<PageDocumentData>, "Page", Lang>;
 export type AllDocumentTypes = BlogDocument | FooterDocument | HeaderDocument | PageDocument;
 /**
+ * Primary content in ContactUs → Primary
+ *
+ */
+interface ContactUsSliceDefaultPrimary {
+    /**
+     * Button Text field in *ContactUs → Primary*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: contact_us.primary.ButtonText
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    ButtonText: prismicT.KeyTextField;
+    /**
+     * Button Link field in *ContactUs → Primary*
+     *
+     * - **Field Type**: Link
+     * - **Placeholder**: *None*
+     * - **API ID Path**: contact_us.primary.ButtonLink
+     * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+     *
+     */
+    ButtonLink: prismicT.LinkField;
+    /**
+     * Button Type field in *ContactUs → Primary*
+     *
+     * - **Field Type**: Select
+     * - **Placeholder**: *None*
+     * - **API ID Path**: contact_us.primary.ButtonType
+     * - **Documentation**: https://prismic.io/docs/core-concepts/select
+     *
+     */
+    ButtonType: prismicT.SelectField<"primary" | "secondary">;
+}
+/**
+ * Item in ContactUs → Items
+ *
+ */
+export interface ContactUsSliceDefaultItem {
+    /**
+     * Social Media Name field in *ContactUs → Items*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: contact_us.items[].SocialMediaName
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    SocialMediaName: prismicT.KeyTextField;
+    /**
+     * Social Media Link field in *ContactUs → Items*
+     *
+     * - **Field Type**: Link
+     * - **Placeholder**: *None*
+     * - **API ID Path**: contact_us.items[].SocialMediaLink
+     * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+     *
+     */
+    SocialMediaLink: prismicT.LinkField;
+    /**
+     * Social Media Icon field in *ContactUs → Items*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: contact_us.items[].SocialMediaIcon
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    SocialMediaIcon: prismicT.ImageField<never>;
+}
+/**
+ * Default variation for ContactUs Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `ContactUs`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type ContactUsSliceDefault = prismicT.SharedSliceVariation<"default", Simplify<ContactUsSliceDefaultPrimary>, Simplify<ContactUsSliceDefaultItem>>;
+/**
+ * Slice variation for *ContactUs*
+ *
+ */
+type ContactUsSliceVariation = ContactUsSliceDefault;
+/**
+ * ContactUs Shared Slice
+ *
+ * - **API ID**: `contact_us`
+ * - **Description**: `ContactUs`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type ContactUsSlice = prismicT.SharedSlice<"contact_us", ContactUsSliceVariation>;
+/**
  * Primary content in FooterWidget → Primary
  *
  */
@@ -224,6 +319,6 @@ declare module "@prismicio/client" {
         (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
     }
     namespace Content {
-        export type { BlogDocumentData, BlogDocument, FooterDocumentData, FooterDocumentDataSlicesSlice, FooterDocument, HeaderDocumentData, HeaderDocumentDataNavigationItem, HeaderDocument, PageDocumentData, PageDocument, AllDocumentTypes, FooterWidgetSliceDefaultPrimary, FooterWidgetSliceDefaultItem, FooterWidgetSliceDefault, FooterWidgetSliceVariation, FooterWidgetSlice };
+        export type { BlogDocumentData, BlogDocument, FooterDocumentData, FooterDocumentDataSlicesSlice, FooterDocument, HeaderDocumentData, HeaderDocumentDataNavigationItem, HeaderDocument, PageDocumentData, PageDocument, AllDocumentTypes, ContactUsSliceDefaultPrimary, ContactUsSliceDefaultItem, ContactUsSliceDefault, ContactUsSliceVariation, ContactUsSlice, FooterWidgetSliceDefaultPrimary, FooterWidgetSliceDefaultItem, FooterWidgetSliceDefault, FooterWidgetSliceVariation, FooterWidgetSlice };
     }
 }
