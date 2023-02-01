@@ -1,0 +1,74 @@
+{
+  "Logo": {
+    "__TYPE__": "ImageContent",
+    "origin": {
+      "id": "main",
+      "url": "https://images.unsplash.com/photo-1601933973783-43cf8a7d4c5f",
+      "width": 6597,
+      "height": 4398
+    },
+    "url": "https://images.unsplash.com/photo-1601933973783-43cf8a7d4c5f",
+    "width": 6597,
+    "height": 4398,
+    "edit": {
+      "zoom": 1,
+      "crop": {
+        "x": 0,
+        "y": 0
+      },
+      "background": "transparent"
+    },
+    "thumbnails": {}
+  },
+  "SiteName": {
+    "__TYPE__": "StructuredTextContent",
+    "value": [
+      {
+        "type": "paragraph",
+        "content": {
+          "text": "Exercitation non elit duis in velit. Tempor ex deserunt anim nisi ex velit ex adipisicing amet aliqua dolor do. Consectetur Lorem deserunt excepteur irure velit do sunt sit irure laboris et sit do veniam."
+        }
+      }
+    ]
+  },
+  "Navigation": {
+    "__TYPE__": "GroupContentType",
+    "value": [
+      {
+        "__TYPE__": "GroupItemContent",
+        "value": [
+          [
+            "MenuName",
+            {
+              "__TYPE__": "FieldContent",
+              "value": "headed",
+              "type": "Text"
+            }
+          ],
+          [
+            "MenuLink",
+            {
+              "__TYPE__": "LinkContent",
+              "value": {
+                "__TYPE__": "ExternalLink",
+                "url": "http://google.com"
+              }
+            }
+          ]
+        ]
+      }
+    ]
+  },
+  "ButtonText": {
+    "__TYPE__": "FieldContent",
+    "value": "melted",
+    "type": "Text"
+  },
+  "ButtonLink": {
+    "__TYPE__": "LinkContent",
+    "value": {
+      "__TYPE__": "ExternalLink",
+      "url": "http://twitter.com"
+    }
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "id": "header",
+  "label": "Header",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "Logo": {
+        "type": "Image",
+        "config": {
+          "label": "Logo",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "SiteName": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Site Name",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+        }
+      },
+      "Navigation": {
+        "type": "Group",
+        "config": {
+          "label": "Navigation",
+          "fields": {
+            "MenuName": {
+              "type": "Text",
+              "config": {
+                "label": "Menu Name",
+                "placeholder": ""
+              }
+            },
+            "MenuLink": {
+              "type": "Link",
+              "config": {
+                "label": "Menu Link",
+                "placeholder": "",
+                "select": null
+              }
+            }
+          }
+        }
+      },
+      "ButtonText": {
+        "type": "Text",
+        "config": {
+          "label": "Button Text",
+          "placeholder": ""
+        }
+      },
+      "ButtonLink": {
+        "type": "Link",
+        "config": {
+          "label": "Button Link",
+          "placeholder": "",
+          "select": null
+        }
+      }
+    }
+  }
+}
