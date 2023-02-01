@@ -1,0 +1,9 @@
+{
+  "id": "BlogArchive",
+  "label": "Blog Archive",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {}
+  }
+}

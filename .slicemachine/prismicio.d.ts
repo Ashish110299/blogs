@@ -64,6 +64,17 @@ interface BlogDocumentData {
      */
     BlogContent: prismicT.RichTextField;
     /**
+     * Slice Zone field in *Blog*
+     *
+     * - **Field Type**: Slice Zone
+     * - **Placeholder**: *None*
+     * - **API ID Path**: Blog.slices[]
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/slices
+     *
+     */
+    slices: prismicT.SliceZone<BlogDocumentDataSlicesSlice>;
+    /**
      * Meta Title field in *Blog*
      *
      * - **Field Type**: Text
@@ -120,6 +131,11 @@ interface BlogDocumentData {
     RobotsMetatag: prismicT.SelectField<"all" | "noindex" | "nofollow" | "noindex,nofollow" | "any" | "index">;
 }
 /**
+ * Slice for *Blog → Slice Zone*
+ *
+ */
+type BlogDocumentDataSlicesSlice = SubscribeBannerSlice;
+/**
  * Blog document from Prismic
  *
  * - **API ID**: `Blog`
@@ -129,6 +145,18 @@ interface BlogDocumentData {
  * @typeParam Lang - Language API ID of the document.
  */
 export type BlogDocument<Lang extends string = string> = prismicT.PrismicDocumentWithUID<Simplify<BlogDocumentData>, "Blog", Lang>;
+/** Content for Blog Archive documents */
+type BlogArchiveDocumentData = Record<string, never>;
+/**
+ * Blog Archive document from Prismic
+ *
+ * - **API ID**: `BlogArchive`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type BlogArchiveDocument<Lang extends string = string> = prismicT.PrismicDocumentWithoutUID<Simplify<BlogArchiveDocumentData>, "BlogArchive", Lang>;
 /** Content for Footer documents */
 interface FooterDocumentData {
     /**
@@ -348,7 +376,7 @@ type SearchArchiveDocumentData = Record<string, never>;
  * @typeParam Lang - Language API ID of the document.
  */
 export type SearchArchiveDocument<Lang extends string = string> = prismicT.PrismicDocumentWithoutUID<Simplify<SearchArchiveDocumentData>, "SearchArchive", Lang>;
-export type AllDocumentTypes = BlogDocument | FooterDocument | HeaderDocument | PageDocument | SearchArchiveDocument;
+export type AllDocumentTypes = BlogDocument | BlogArchiveDocument | FooterDocument | HeaderDocument | PageDocument | SearchArchiveDocument;
 /**
  * Primary content in ContactUs → Primary
  *
@@ -563,6 +591,6 @@ declare module "@prismicio/client" {
         (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
     }
     namespace Content {
-        export type { BlogDocumentData, BlogDocument, FooterDocumentData, FooterDocumentDataSlicesSlice, FooterDocument, HeaderDocumentData, HeaderDocumentDataNavigationItem, HeaderDocument, PageDocumentData, PageDocumentDataSlicesSlice, PageDocument, SearchArchiveDocumentData, SearchArchiveDocument, AllDocumentTypes, ContactUsSliceDefaultPrimary, ContactUsSliceDefaultItem, ContactUsSliceDefault, ContactUsSliceVariation, ContactUsSlice, FooterWidgetSliceDefaultPrimary, FooterWidgetSliceDefaultItem, FooterWidgetSliceDefault, FooterWidgetSliceVariation, FooterWidgetSlice, SubscribeBannerSliceDefaultPrimary, SubscribeBannerSliceDefault, SubscribeBannerSliceVariation, SubscribeBannerSlice };
+        export type { BlogDocumentData, BlogDocumentDataSlicesSlice, BlogDocument, BlogArchiveDocumentData, BlogArchiveDocument, FooterDocumentData, FooterDocumentDataSlicesSlice, FooterDocument, HeaderDocumentData, HeaderDocumentDataNavigationItem, HeaderDocument, PageDocumentData, PageDocumentDataSlicesSlice, PageDocument, SearchArchiveDocumentData, SearchArchiveDocument, AllDocumentTypes, ContactUsSliceDefaultPrimary, ContactUsSliceDefaultItem, ContactUsSliceDefault, ContactUsSliceVariation, ContactUsSlice, FooterWidgetSliceDefaultPrimary, FooterWidgetSliceDefaultItem, FooterWidgetSliceDefault, FooterWidgetSliceVariation, FooterWidgetSlice, SubscribeBannerSliceDefaultPrimary, SubscribeBannerSliceDefault, SubscribeBannerSliceVariation, SubscribeBannerSlice };
     }
 }

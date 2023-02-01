@@ -1,16 +1,16 @@
 {
   "uid": {
     "__TYPE__": "UIDContent",
-    "value": "shoot"
+    "value": "break"
   },
   "ArticleDate": {
     "__TYPE__": "FieldContent",
     "type": "Date",
-    "value": "2022-05-22"
+    "value": "2014-01-02"
   },
   "WriterName": {
     "__TYPE__": "FieldContent",
-    "value": "fuel",
+    "value": "perhaps",
     "type": "Text"
   },
   "BlogThumbnail": {
@@ -40,7 +40,7 @@
       {
         "type": "paragraph",
         "content": {
-          "text": "Mollit aute nostrud id occaecat tempor est quis laborum amet incididunt. Laboris consequat laboris tempor aute id elit sint nisi exercitation tempor."
+          "text": "Cillum ex commodo minim duis dolore. Nostrud velit reprehenderit laboris eiusmod nostrud mollit exercitation tempor voluptate id."
         }
       }
     ]
@@ -51,9 +51,101 @@
       {
         "type": "paragraph",
         "content": {
-          "text": "Esse aute reprehenderit proident nostrud consequat incididunt."
+          "text": "Dolor elit nulla anim adipisicing tempor esse deserunt."
         }
       }
     ]
+  },
+  "slices": {
+    "__TYPE__": "SliceContentType",
+    "value": [
+      {
+        "key": "subscribe_banner$43437bc8-3b12-41c6-afbb-a5c87793c8e0",
+        "name": "subscribe_banner",
+        "widget": {
+          "__TYPE__": "SharedSliceContent",
+          "variation": "default",
+          "primary": {
+            "title": {
+              "__TYPE__": "StructuredTextContent",
+              "value": [
+                {
+                  "type": "heading1",
+                  "content": {
+                    "text": "Acres"
+                  }
+                }
+              ]
+            },
+            "description": {
+              "__TYPE__": "StructuredTextContent",
+              "value": [
+                {
+                  "type": "paragraph",
+                  "content": {
+                    "text": "Excepteur proident et irure quis laboris sunt occaecat mollit id qui ad et eiusmod duis esse. Cillum cillum est sint sunt adipisicing. Eu mollit occaecat fugiat consequat velit ut cupidatat pariatur enim proident excepteur nostrud labore."
+                  }
+                }
+              ]
+            }
+          },
+          "items": [
+            {
+              "__TYPE__": "GroupItemContent",
+              "value": []
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "title": {
+    "__TYPE__": "FieldContent",
+    "value": "simple",
+    "type": "Text"
+  },
+  "description": {
+    "__TYPE__": "StructuredTextContent",
+    "value": [
+      {
+        "type": "paragraph",
+        "content": {
+          "text": "Excepteur sunt enim minim dolore dolore sit. Adipisicing ullamco minim eiusmod consectetur sint velit sunt. Cillum eiusmod ullamco reprehenderit culpa exercitation."
+        }
+      }
+    ]
+  },
+  "MetaImage": {
+    "__TYPE__": "ImageContent",
+    "origin": {
+      "id": "main",
+      "url": "https://images.unsplash.com/photo-1571126770897-2d612d1f7b89",
+      "width": 3456,
+      "height": 3456
+    },
+    "url": "https://images.unsplash.com/photo-1571126770897-2d612d1f7b89",
+    "width": 3456,
+    "height": 3456,
+    "edit": {
+      "zoom": 1,
+      "crop": {
+        "x": 0,
+        "y": 0
+      },
+      "background": "transparent"
+    },
+    "thumbnails": {}
+  },
+  "CanonicalLink": {
+    "__TYPE__": "LinkContent",
+    "value": {
+      "__TYPE__": "ExternalLink",
+      "url": "https://prismic.io"
+    }
+  },
+  "RobotsMetatag": {
+    "__TYPE__": "FieldContent",
+    "value": "all",
+    "type": "Select"
   }
 }
