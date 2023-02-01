@@ -2,13 +2,16 @@
 
 import ContactUs from './ContactUs';
 import FooterWidget from './FooterWidget';
+import SubscribeBanner from './SubscribeBanner';
 
 export {
 	ContactUs,
 	FooterWidget,
+	SubscribeBanner,
 };
 
 export const components = {
 	contact_us: ContactUs,
 	footer_widget: FooterWidget,
+	subscribe_banner: SubscribeBanner,
 };

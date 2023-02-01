@@ -63,6 +63,61 @@ interface BlogDocumentData {
      *
      */
     BlogContent: prismicT.RichTextField;
+    /**
+     * Meta Title field in *Blog*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: Blog.title
+     * - **Tab**: SEO
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    title: prismicT.KeyTextField;
+    /**
+     * Meta Description field in *Blog*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: Blog.description
+     * - **Tab**: SEO
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    description: prismicT.RichTextField;
+    /**
+     * Meta Image field in *Blog*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: Blog.MetaImage
+     * - **Tab**: SEO
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    MetaImage: prismicT.ImageField<never>;
+    /**
+     * Canonical Link field in *Blog*
+     *
+     * - **Field Type**: Link
+     * - **Placeholder**: *None*
+     * - **API ID Path**: Blog.CanonicalLink
+     * - **Tab**: SEO
+     * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+     *
+     */
+    CanonicalLink: prismicT.LinkField;
+    /**
+     * Robots Metatag field in *Blog*
+     *
+     * - **Field Type**: Select
+     * - **Placeholder**: *None*
+     * - **API ID Path**: Blog.RobotsMetatag
+     * - **Tab**: SEO
+     * - **Documentation**: https://prismic.io/docs/core-concepts/select
+     *
+     */
+    RobotsMetatag: prismicT.SelectField<"all" | "noindex" | "nofollow" | "noindex,nofollow" | "any" | "index">;
 }
 /**
  * Blog document from Prismic
@@ -92,7 +147,7 @@ interface FooterDocumentData {
  * Slice for *Footer → Slice Zone*
  *
  */
-type FooterDocumentDataSlicesSlice = FooterWidgetSlice;
+type FooterDocumentDataSlicesSlice = FooterWidgetSlice | ContactUsSlice;
 /**
  * Footer document from Prismic
  *
@@ -198,7 +253,79 @@ export interface HeaderDocumentDataNavigationItem {
  */
 export type HeaderDocument<Lang extends string = string> = prismicT.PrismicDocumentWithoutUID<Simplify<HeaderDocumentData>, "header", Lang>;
 /** Content for Page documents */
-type PageDocumentData = Record<string, never>;
+interface PageDocumentData {
+    /**
+     * Slice Zone field in *Page*
+     *
+     * - **Field Type**: Slice Zone
+     * - **Placeholder**: *None*
+     * - **API ID Path**: Page.slices[]
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/slices
+     *
+     */
+    slices: prismicT.SliceZone<PageDocumentDataSlicesSlice>;
+    /**
+     * Meta Title field in *Page*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: Page.title
+     * - **Tab**: SEO
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    title: prismicT.KeyTextField;
+    /**
+     * Meta Description field in *Page*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: Page.description
+     * - **Tab**: SEO
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    description: prismicT.RichTextField;
+    /**
+     * Meta Image field in *Page*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: Page.MetaImage
+     * - **Tab**: SEO
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    MetaImage: prismicT.ImageField<never>;
+    /**
+     * Canonical Link field in *Page*
+     *
+     * - **Field Type**: Link
+     * - **Placeholder**: *None*
+     * - **API ID Path**: Page.CanonicalLink
+     * - **Tab**: SEO
+     * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+     *
+     */
+    CanonicalLink: prismicT.LinkField;
+    /**
+     * Robots Metatag field in *Page*
+     *
+     * - **Field Type**: Select
+     * - **Placeholder**: *None*
+     * - **API ID Path**: Page.RobotsMetatag
+     * - **Tab**: SEO
+     * - **Documentation**: https://prismic.io/docs/core-concepts/select
+     *
+     */
+    RobotsMetatag: prismicT.SelectField<"all" | "noindex" | "nofollow" | "noindex,nofollow" | "any" | "index">;
+}
+/**
+ * Slice for *Page → Slice Zone*
+ *
+ */
+type PageDocumentDataSlicesSlice = SubscribeBannerSlice;
 /**
  * Page document from Prismic
  *
@@ -382,11 +509,60 @@ type FooterWidgetSliceVariation = FooterWidgetSliceDefault;
  *
  */
 export type FooterWidgetSlice = prismicT.SharedSlice<"footer_widget", FooterWidgetSliceVariation>;
+/**
+ * Primary content in SubscribeBanner → Primary
+ *
+ */
+interface SubscribeBannerSliceDefaultPrimary {
+    /**
+     * Title field in *SubscribeBanner → Primary*
+     *
+     * - **Field Type**: Title
+     * - **Placeholder**: This is where it all begins...
+     * - **API ID Path**: subscribe_banner.primary.title
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    title: prismicT.TitleField;
+    /**
+     * Description field in *SubscribeBanner → Primary*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: A nice description of your feature
+     * - **API ID Path**: subscribe_banner.primary.description
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    description: prismicT.RichTextField;
+}
+/**
+ * Default variation for SubscribeBanner Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `SubscribeBanner`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type SubscribeBannerSliceDefault = prismicT.SharedSliceVariation<"default", Simplify<SubscribeBannerSliceDefaultPrimary>, never>;
+/**
+ * Slice variation for *SubscribeBanner*
+ *
+ */
+type SubscribeBannerSliceVariation = SubscribeBannerSliceDefault;
+/**
+ * SubscribeBanner Shared Slice
+ *
+ * - **API ID**: `subscribe_banner`
+ * - **Description**: `SubscribeBanner`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type SubscribeBannerSlice = prismicT.SharedSlice<"subscribe_banner", SubscribeBannerSliceVariation>;
 declare module "@prismicio/client" {
     interface CreateClient {
         (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
     }
     namespace Content {
-        export type { BlogDocumentData, BlogDocument, FooterDocumentData, FooterDocumentDataSlicesSlice, FooterDocument, HeaderDocumentData, HeaderDocumentDataNavigationItem, HeaderDocument, PageDocumentData, PageDocument, SearchArchiveDocumentData, SearchArchiveDocument, AllDocumentTypes, ContactUsSliceDefaultPrimary, ContactUsSliceDefaultItem, ContactUsSliceDefault, ContactUsSliceVariation, ContactUsSlice, FooterWidgetSliceDefaultPrimary, FooterWidgetSliceDefaultItem, FooterWidgetSliceDefault, FooterWidgetSliceVariation, FooterWidgetSlice };
+        export type { BlogDocumentData, BlogDocument, FooterDocumentData, FooterDocumentDataSlicesSlice, FooterDocument, HeaderDocumentData, HeaderDocumentDataNavigationItem, HeaderDocument, PageDocumentData, PageDocumentDataSlicesSlice, PageDocument, SearchArchiveDocumentData, SearchArchiveDocument, AllDocumentTypes, ContactUsSliceDefaultPrimary, ContactUsSliceDefaultItem, ContactUsSliceDefault, ContactUsSliceVariation, ContactUsSlice, FooterWidgetSliceDefaultPrimary, FooterWidgetSliceDefaultItem, FooterWidgetSliceDefault, FooterWidgetSliceVariation, FooterWidgetSlice, SubscribeBannerSliceDefaultPrimary, SubscribeBannerSliceDefault, SubscribeBannerSliceVariation, SubscribeBannerSlice };
     }
 }

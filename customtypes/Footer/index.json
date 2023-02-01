@@ -12,6 +12,9 @@
           "choices": {
             "footer_widget": {
               "type": "SharedSlice"
+            },
+            "contact_us": {
+              "type": "SharedSlice"
             }
           }
         }

@@ -1,6 +1,98 @@
 {
   "uid": {
     "__TYPE__": "UIDContent",
-    "value": "mark"
+    "value": "general"
+  },
+  "slices": {
+    "__TYPE__": "SliceContentType",
+    "value": [
+      {
+        "key": "subscribe_banner$bc0cbc88-ca77-439c-bace-187069b46e3c",
+        "name": "subscribe_banner",
+        "widget": {
+          "__TYPE__": "SharedSliceContent",
+          "variation": "default",
+          "primary": {
+            "title": {
+              "__TYPE__": "StructuredTextContent",
+              "value": [
+                {
+                  "type": "heading1",
+                  "content": {
+                    "text": "Brought"
+                  }
+                }
+              ]
+            },
+            "description": {
+              "__TYPE__": "StructuredTextContent",
+              "value": [
+                {
+                  "type": "paragraph",
+                  "content": {
+                    "text": "Et labore eu aliquip. Qui nulla sint sit culpa irure consectetur consectetur irure ut occaecat veniam."
+                  }
+                }
+              ]
+            }
+          },
+          "items": [
+            {
+              "__TYPE__": "GroupItemContent",
+              "value": []
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "title": {
+    "__TYPE__": "FieldContent",
+    "value": "reader",
+    "type": "Text"
+  },
+  "description": {
+    "__TYPE__": "StructuredTextContent",
+    "value": [
+      {
+        "type": "paragraph",
+        "content": {
+          "text": "Occaecat nostrud ad id magna."
+        }
+      }
+    ]
+  },
+  "MetaImage": {
+    "__TYPE__": "ImageContent",
+    "origin": {
+      "id": "main",
+      "url": "https://images.unsplash.com/photo-1586952518485-11b180e92764",
+      "width": 4172,
+      "height": 4000
+    },
+    "url": "https://images.unsplash.com/photo-1586952518485-11b180e92764",
+    "width": 4172,
+    "height": 4000,
+    "edit": {
+      "zoom": 1,
+      "crop": {
+        "x": 0,
+        "y": 0
+      },
+      "background": "transparent"
+    },
+    "thumbnails": {}
+  },
+  "CanonicalLink": {
+    "__TYPE__": "LinkContent",
+    "value": {
+      "__TYPE__": "ExternalLink",
+      "url": "https://slicemachine.dev"
+    }
+  },
+  "RobotsMetatag": {
+    "__TYPE__": "FieldContent",
+    "value": "noindex",
+    "type": "Select"
   }
 }
