@@ -1,6 +1,59 @@
 {
   "uid": {
     "__TYPE__": "UIDContent",
-    "value": "studying"
+    "value": "shoot"
+  },
+  "ArticleDate": {
+    "__TYPE__": "FieldContent",
+    "type": "Date",
+    "value": "2022-05-22"
+  },
+  "WriterName": {
+    "__TYPE__": "FieldContent",
+    "value": "fuel",
+    "type": "Text"
+  },
+  "BlogThumbnail": {
+    "__TYPE__": "ImageContent",
+    "origin": {
+      "id": "main",
+      "url": "https://images.unsplash.com/photo-1504198070170-4ca53bb1c1fa",
+      "width": 2747,
+      "height": 4120
+    },
+    "url": "https://images.unsplash.com/photo-1504198070170-4ca53bb1c1fa",
+    "width": 2747,
+    "height": 4120,
+    "edit": {
+      "zoom": 1,
+      "crop": {
+        "x": 0,
+        "y": 0
+      },
+      "background": "transparent"
+    },
+    "thumbnails": {}
+  },
+  "BlogTitle": {
+    "__TYPE__": "StructuredTextContent",
+    "value": [
+      {
+        "type": "paragraph",
+        "content": {
+          "text": "Mollit aute nostrud id occaecat tempor est quis laborum amet incididunt. Laboris consequat laboris tempor aute id elit sint nisi exercitation tempor."
+        }
+      }
+    ]
+  },
+  "BlogContent": {
+    "__TYPE__": "StructuredTextContent",
+    "value": [
+      {
+        "type": "paragraph",
+        "content": {
+          "text": "Esse aute reprehenderit proident nostrud consequat incididunt."
+        }
+      }
+    ]
   }
 }

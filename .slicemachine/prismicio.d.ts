@@ -7,7 +7,63 @@ type Simplify<T> = {
     [KeyType in keyof T]: T[KeyType];
 };
 /** Content for Blog documents */
-type BlogDocumentData = Record<string, never>;
+interface BlogDocumentData {
+    /**
+     * Article Date field in *Blog*
+     *
+     * - **Field Type**: Date
+     * - **Placeholder**: *None*
+     * - **API ID Path**: Blog.ArticleDate
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/date
+     *
+     */
+    ArticleDate: prismicT.DateField;
+    /**
+     * Writer Name field in *Blog*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: Blog.WriterName
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    WriterName: prismicT.KeyTextField;
+    /**
+     * Blog Thumbnail field in *Blog*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: Blog.BlogThumbnail
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    BlogThumbnail: prismicT.ImageField<never>;
+    /**
+     * Blog Title field in *Blog*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: Blog.BlogTitle
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    BlogTitle: prismicT.RichTextField;
+    /**
+     * Blog Content field in *Blog*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: Blog.BlogContent
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    BlogContent: prismicT.RichTextField;
+}
 /**
  * Blog document from Prismic
  *
@@ -153,7 +209,19 @@ type PageDocumentData = Record<string, never>;
  * @typeParam Lang - Language API ID of the document.
  */
 export type PageDocument<Lang extends string = string> = prismicT.PrismicDocumentWithUID<Simplify<PageDocumentData>, "Page", Lang>;
-export type AllDocumentTypes = BlogDocument | FooterDocument | HeaderDocument | PageDocument;
+/** Content for Search Archive documents */
+type SearchArchiveDocumentData = Record<string, never>;
+/**
+ * Search Archive document from Prismic
+ *
+ * - **API ID**: `SearchArchive`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type SearchArchiveDocument<Lang extends string = string> = prismicT.PrismicDocumentWithoutUID<Simplify<SearchArchiveDocumentData>, "SearchArchive", Lang>;
+export type AllDocumentTypes = BlogDocument | FooterDocument | HeaderDocument | PageDocument | SearchArchiveDocument;
 /**
  * Primary content in ContactUs → Primary
  *
@@ -319,6 +387,6 @@ declare module "@prismicio/client" {
         (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
     }
     namespace Content {
-        export type { BlogDocumentData, BlogDocument, FooterDocumentData, FooterDocumentDataSlicesSlice, FooterDocument, HeaderDocumentData, HeaderDocumentDataNavigationItem, HeaderDocument, PageDocumentData, PageDocument, AllDocumentTypes, ContactUsSliceDefaultPrimary, ContactUsSliceDefaultItem, ContactUsSliceDefault, ContactUsSliceVariation, ContactUsSlice, FooterWidgetSliceDefaultPrimary, FooterWidgetSliceDefaultItem, FooterWidgetSliceDefault, FooterWidgetSliceVariation, FooterWidgetSlice };
+        export type { BlogDocumentData, BlogDocument, FooterDocumentData, FooterDocumentDataSlicesSlice, FooterDocument, HeaderDocumentData, HeaderDocumentDataNavigationItem, HeaderDocument, PageDocumentData, PageDocument, SearchArchiveDocumentData, SearchArchiveDocument, AllDocumentTypes, ContactUsSliceDefaultPrimary, ContactUsSliceDefaultItem, ContactUsSliceDefault, ContactUsSliceVariation, ContactUsSlice, FooterWidgetSliceDefaultPrimary, FooterWidgetSliceDefaultItem, FooterWidgetSliceDefault, FooterWidgetSliceVariation, FooterWidgetSlice };
     }
 }
